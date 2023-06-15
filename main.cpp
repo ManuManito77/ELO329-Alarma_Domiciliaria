@@ -21,11 +21,15 @@ int main(int argc, char * argv[]) {
     fin >> nDoors;
     fin >> junk;
     cout << "nDoors:" << nDoors << " junk: " << junk << endl;
+
+    //Crear puertas
     for( int i=0; i<nDoors; i++) {
         int zone;
         fin >> junk >> junk >> junk >> zone;
         doors.push_back(new Door(zone));
     }
+
+    //Efecutar cambio de estados para todas las puertas
     for (unsigned int i=0; i<doors.size(); i++) { //uint : unsigned int
         doors[i]->changeState();
         doors[i]->changeState();
