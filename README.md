@@ -11,7 +11,7 @@ Cada etapa de esta tarea se encuentra en su respectiva rama (branch) del reposit
 
     ` g++ *.cpp -o tarea ` -> para compilar todos los archivos y generar el ejecutable llamado *tarea*.
 
-    ` ./tarea config.txt  ` -> para ejecutar el archivo tarea y agregaar como parámetro el nombre del archivo con el que se va a trabajar.
+    ` ./tarea config.txt  ` -> para ejecutar el archivo tarea y agregar como parámetro el nombre del archivo con el que se va a trabajar.
 
 * Etapa 3 y 4:
 
