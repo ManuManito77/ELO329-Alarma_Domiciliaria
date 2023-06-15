@@ -1,4 +1,8 @@
 # ELO329-Alarma_Domiciliaria
+## Orden del repositrio
+
+Cada etapa de esta tarea se encuentra en su respectiva rama (branch) del repositorio, el cual se encuentra público para evitar cualquier inconveniente al momento de la revisión. Cada Stage se puede descargar diréctamente como un archivo `.zip` o puede ser clonado localmente.
+
 ## Como compilar
 
 *  Etapa 1 y 2:
