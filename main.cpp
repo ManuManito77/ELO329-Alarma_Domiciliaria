@@ -44,6 +44,8 @@ int main(int argc, char * argv[]) {
         windows[i]->changeState();
         windows[i]->changeState();
     }
+
+    //Para aplicar y leer cambios de estado en puerta principal
     central.checkZones();
     doors[0]->changeState();
     central.checkZones();
