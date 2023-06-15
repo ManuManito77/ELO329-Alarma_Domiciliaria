@@ -6,10 +6,13 @@ WindowView::WindowView(int x, int y, int angle, MagneticSensorView * mv) {
     installMagneticSensor(*mv);
     magnet = &(mv->getMagnetView());
     QTransform transform;
+    //Se aplican las transformaciones para ubicar correctamente la ventana
     transform.translate(x,y);
     transform.rotate(angle);
     setTransform(transform);
 }
+
+//Se crea la ventana
 void WindowView::makeWindowView(){
     QGraphicsRectItem * origenPillar = new QGraphicsRectItem(0, 0, 16, 16, this);
     origenPillar->setBrush(Qt::blue); 
@@ -27,6 +30,8 @@ void WindowView::makeWindowView(){
 void WindowView::setWindowModel(Window * m){
     model=m;
 }
+
+//Agregar sensor magnetico a la ventana "visual"
 void WindowView::installMagneticSensor(MagneticSensorView & mv){
     mv.getMagnetView().setRect(slidingGlass->rect().right()-mv.getMagnetView().rect().width(),
                                  slidingGlass->rect().bottom(),
@@ -39,6 +44,8 @@ void WindowView::installMagneticSensor(MagneticSensorView & mv){
     addToGroup(&mv.getMagnetView());
     addToGroup(&mv.getSwitchView());
 }
+
+//Cambiar estados de la ventana
 void WindowView::setOpen(){ 
     QPointF posicionActual = slidingGlass->pos();
     QPointF nuevaPosicion = QPointF(posicionActual.x() - slidingGlass->rect().width(), posicionActual.y());
@@ -51,6 +58,8 @@ void WindowView::setClose(){
     slidingGlass->setPos(nuevaPosicion);
     magnet->setPos(nuevaPosicion);
 }
+
+//Leer acción de click del botón
 void WindowView::mousePressEvent(QGraphicsSceneMouseEvent * event){
     if (model!= NULL && event->button()==Qt::LeftButton)
         model->changeState();

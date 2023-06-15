@@ -40,6 +40,8 @@ int main(int argc, char *argv[])
         central.addNewSensor(sensor);
         gui.addHouseHollow(doorView);
     }
+
+    
     for( int i=0; i<nWindows; i++) {
         int x, y, angle, zone;
         fin >> x >> y >> angle >> zone;
