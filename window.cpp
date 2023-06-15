@@ -5,10 +5,14 @@ Window::Window()
 {
 
 }
+
+//Constructor principal
 Window::Window(MagneticSensor * sensor, WindowView * v): magneticSensor(sensor), view(v) {
     isClose=true;
     view->setWindowModel(this);
 }
+
+//Método para cambiar de estado
 void Window::changeState() {
     if (isClose) {
        isClose = false;

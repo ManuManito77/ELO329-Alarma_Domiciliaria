@@ -5,9 +5,13 @@ Siren::Siren()
 {
 
 }
+
+//Constructor principal
 Siren::Siren(SirenView * v): view(v) {
     isActive = false;
 }
+
+//Acciones para activar y desactivar la sirena
 void Siren::play() {
     isActive = true;
     view->setOpenView();

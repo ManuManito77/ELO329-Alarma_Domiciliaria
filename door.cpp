@@ -5,10 +5,13 @@ Door::Door()
 {
 
 }
+//Constructor principal
 Door::Door(MagneticSensor * sensor, DoorView * v): magneticSensor(sensor), view(v) {
     isClose=true;
     view->setDoorModel(this);
 }
+
+//Cambio de estado abieto-cerrado
 void Door::changeState() {
     if (isClose) {
        isClose = false;

@@ -3,16 +3,22 @@
 
 using namespace std;
 
+
+//Constructor principal
 Central::Central(Siren *s, QObject *parent)
     : QObject(parent), timer(new QTimer(this)) {
-    connect(timer, SIGNAL(timeout()), this, SLOT(checkZones()));
-    timer ->start(200);
+    connect(timer, SIGNAL(timeout()), this, SLOT(checkZones()));    //Chequea las zonas según se active el timer
+    timer ->start(200);     //periodo del timer cada 200ms
     isArmed = false;
     this->siren = s;
 }
+
+
 void Central::addNewSensor(Sensor * ps){
     zones.push_back(ps);
 }
+
+//Condiciones para activar la alarma
 void Central::armPerimeter(){
     bool closeZones[2];
     checkCloseZones(closeZones);
@@ -26,11 +32,15 @@ void Central::armPerimeter(){
         }
     }
 }
+
+//Desactivar alarma
 void Central::disarm(){
     isArmed = false;
     siren->stop();
     emit showMessage("Perímetro desarmado");
 }
+
+//Método para chequear las zonas
 void Central::checkZones() {
     bool closeZones[2];
     checkCloseZones(closeZones);
@@ -41,6 +51,8 @@ void Central::checkZones() {
         }
     }
 }
+
+//Metodo para chequear zonas cerradas
 void Central::checkCloseZones(bool closeZones[]) {
     closeZones[0] = closeZones[1] = true;
     for (uint i=0; i< zones.size(); i++)

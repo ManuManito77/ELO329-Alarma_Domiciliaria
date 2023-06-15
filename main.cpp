@@ -16,12 +16,15 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
     SirenView *sirenView = new SirenView();
     Siren *siren = new Siren(sirenView);
+
     Central central(siren);
     HouseWindow gui(&central);  // gui: Graphical User Interface 
     gui.addAlarmHollow(sirenView);
     ifstream fin;
+
     int nDoors, nWindows;
     if (argc != 2) {
         cout << "Usage: "<<argv[0]<<" <configuration_file>" << endl;
@@ -36,6 +39,8 @@ int main(int argc, char *argv[])
     fin >> nDoors;
     fin >> nWindows;
     cout << "nDoors:" << nDoors << " nWindows: " << nWindows << endl;
+
+    //Creación de puertas
     for( int i=0; i<nDoors; i++) {
         int x, y, angle, zone;
         fin >> x >> y >> angle >> zone;
@@ -45,6 +50,8 @@ int main(int argc, char *argv[])
         central.addNewSensor(sensor);
         gui.addHouseHollow(doorView);
     }
+
+    //Creación de ventanas
     for( int i=0; i<nWindows; i++) {
         int x, y, angle, zone;
         fin >> x >> y >> angle >> zone;

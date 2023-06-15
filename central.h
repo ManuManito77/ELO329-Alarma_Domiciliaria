@@ -27,7 +27,7 @@ private:
     vector<Sensor *> zones;  // keep references to all sensors already installed in doors and windows.
     QTimer * timer;
     Siren * siren;
-    bool isArmed;
+    bool isArmed;   //variable para controlar la activación de la alarma
 };
 
 #endif // CENTRAL_H

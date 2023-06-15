@@ -18,14 +18,14 @@ void SirenView::makeSirenView(){
     sirenView->setBrush(Qt::green);
     addToGroup(sirenView);
     timer = new QTimer(this);
-    connect(timer, SIGNAL(timeout()), this, SLOT(changeColor()));
+    connect(timer, SIGNAL(timeout()), this, SLOT(changeColor()));   //Para implementar parpadeo de la sirena
 }
+
+//Acciones para poligono de sirena
 void SirenView::setCloseView(){
-    //sirenView->setBrush(Qt::green);
     resetColor();
 }
 void SirenView::setOpenView(){
-    //sirenView->setBrush(Qt::red);
     timer->start(100);
 }
 void SirenView::changeColor(){
