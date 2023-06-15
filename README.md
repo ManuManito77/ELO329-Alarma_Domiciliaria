@@ -11,4 +11,4 @@
 
 * Etapa 3 y 4:
 
-    Estas etapas se deben ejecutar en *QtCrator* descargando los proyectos de las ramas *Tarea3_Stage3* y *Tarea3_Stage3*. Cada carpeta tendrá un archivo de proyecto de extensión *.pro* que debe ejecutarse para iniciar el proyecto en Qt. Antes de ejecutar el programa se requiere que se ingrese el argumento de la ejecución en `Projects > Run > Command line arguments` agregando `..\container_folder\config.txt`, para seleccionar la carpeta en donde está el archivo config.txt.
+    Estas etapas se deben ejecutar en *QtCrator* descargando los proyectos de las ramas *Tarea3_Stage3* y *Tarea3_Stage4*. Cada carpeta tendrá un archivo de proyecto de extensión *.pro* que debe ejecutarse para iniciar el proyecto en Qt. Antes de ejecutar el programa se requiere que se ingrese el argumento de la ejecución en `Projects > Run > Command line arguments` agregando `..\container_folder\config.txt`, para seleccionar la carpeta en donde está el archivo config.txt.
